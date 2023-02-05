@@ -103,6 +103,7 @@ public class LevelManager : BaseManager
         levelPrefab = InstantiateLevel(levelData.levelPrefab);
         LevelLoadedEventData data = new LevelLoadedEventData(levelData, levelPrefab, levelNo);
         EventManager.levelLoadedEvent.Invoke(data);
+        ManagerHub.Get<GameManager>().ResetCharacter();
     }
 
     private void ResetLevel()
